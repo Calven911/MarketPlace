@@ -80,11 +80,26 @@ namespace MarketPlace
         private void Product_Catalog_Click(object sender, EventArgs e)
         {
 
+            panelContent.Controls.Clear();
+
+           
+            Form2 myForm2 = new Form2();
+            myForm2.TopLevel = false;                         
+            myForm2.FormBorderStyle = FormBorderStyle.None;    
+            myForm2.Dock = DockStyle.Fill;                     
+
+         
+            panelContent.Controls.Add(myForm2);
+            myForm2.Show();
         }
 
         private void Inventory_Click(object sender, EventArgs e)
         {
+            panelContent.Controls.Clear();
 
+           
+            dataGridView1.Dock = DockStyle.Fill;
+            panelContent.Controls.Add(dataGridView1);
         }
 
         private void MarketPlace_Dashboard_Load(object sender, EventArgs e)
@@ -100,7 +115,9 @@ namespace MarketPlace
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-         
+
         }
+
+       
     }
 }

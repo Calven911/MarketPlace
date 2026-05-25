@@ -38,15 +38,16 @@
             panel2 = new Panel();
             panel3 = new Panel();
             panel4 = new Panel();
+            panelContent = new Panel();
             Suppliers = new Button();
             Add_Product = new Button();
             Inventory = new Button();
-            dataGridView1 = new DataGridView();
-            colName = new DataGridViewTextBoxColumn();
-            colCategory = new DataGridViewTextBoxColumn();
-            colPrice = new DataGridViewTextBoxColumn();
-            colSold = new DataGridViewTextBoxColumn();
             colStatus = new DataGridViewTextBoxColumn();
+            colSold = new DataGridViewTextBoxColumn();
+            colPrice = new DataGridViewTextBoxColumn();
+            colCategory = new DataGridViewTextBoxColumn();
+            colName = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -173,8 +174,16 @@
             panel4.Dock = DockStyle.Left;
             panel4.Location = new Point(0, 80);
             panel4.Name = "panel4";
-            panel4.Size = new Size(180, 433);
+            panel4.Size = new Size(158, 433);
             panel4.TabIndex = 3;
+            // 
+            // panelContent
+            // 
+            panelContent.Dock = DockStyle.Fill;
+            panelContent.Location = new Point(158, 80);
+            panelContent.Name = "panelContent";
+            panelContent.Size = new Size(856, 433);
+            panelContent.TabIndex = 8;
             // 
             // Suppliers
             // 
@@ -184,7 +193,7 @@
             Suppliers.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Suppliers.Location = new Point(0, 90);
             Suppliers.Name = "Suppliers";
-            Suppliers.Size = new Size(180, 45);
+            Suppliers.Size = new Size(158, 45);
             Suppliers.TabIndex = 7;
             Suppliers.Text = "Suppliers";
             Suppliers.UseVisualStyleBackColor = true;
@@ -198,7 +207,7 @@
             Add_Product.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Add_Product.Location = new Point(0, 45);
             Add_Product.Name = "Add_Product";
-            Add_Product.Size = new Size(180, 45);
+            Add_Product.Size = new Size(158, 45);
             Add_Product.TabIndex = 5;
             Add_Product.Text = "Add Product";
             Add_Product.UseVisualStyleBackColor = true;
@@ -212,27 +221,39 @@
             Inventory.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Inventory.Location = new Point(0, 0);
             Inventory.Name = "Inventory";
-            Inventory.Size = new Size(180, 45);
+            Inventory.Size = new Size(158, 45);
             Inventory.TabIndex = 4;
             Inventory.Text = "Inventory";
             Inventory.UseVisualStyleBackColor = true;
             Inventory.Click += Inventory_Click;
             // 
-            // dataGridView1
+            // colStatus
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colName, colCategory, colPrice, colSold, colStatus });
-            dataGridView1.Location = new Point(165, 77);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(834, 433);
-            dataGridView1.TabIndex = 4;
-            dataGridView1.CellClick += dataGridView1_CellClick;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            colStatus.HeaderText = "Status";
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            colStatus.Resizable = DataGridViewTriState.False;
+            // 
+            // colSold
+            // 
+            colSold.HeaderText = "Sold";
+            colSold.Name = "colSold";
+            colSold.ReadOnly = true;
+            colSold.Resizable = DataGridViewTriState.False;
+            // 
+            // colPrice
+            // 
+            colPrice.HeaderText = "Price";
+            colPrice.Name = "colPrice";
+            colPrice.ReadOnly = true;
+            colPrice.Resizable = DataGridViewTriState.False;
+            // 
+            // colCategory
+            // 
+            colCategory.HeaderText = "Category";
+            colCategory.Name = "colCategory";
+            colCategory.ReadOnly = true;
+            colCategory.Resizable = DataGridViewTriState.False;
             // 
             // colName
             // 
@@ -243,39 +264,28 @@
             colName.Resizable = DataGridViewTriState.False;
             colName.Width = 158;
             // 
-            // colCategory
+            // dataGridView1
             // 
-            colCategory.HeaderText = "Category";
-            colCategory.Name = "colCategory";
-            colCategory.ReadOnly = true;
-            colCategory.Resizable = DataGridViewTriState.False;
-            // 
-            // colPrice
-            // 
-            colPrice.HeaderText = "Price";
-            colPrice.Name = "colPrice";
-            colPrice.ReadOnly = true;
-            colPrice.Resizable = DataGridViewTriState.False;
-            // 
-            // colSold
-            // 
-            colSold.HeaderText = "Sold";
-            colSold.Name = "colSold";
-            colSold.ReadOnly = true;
-            colSold.Resizable = DataGridViewTriState.False;
-            // 
-            // colStatus
-            // 
-            colStatus.HeaderText = "Status";
-            colStatus.Name = "colStatus";
-            colStatus.ReadOnly = true;
-            colStatus.Resizable = DataGridViewTriState.False;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colName, colCategory, colPrice, colSold, colStatus });
+            dataGridView1.Location = new Point(158, 80);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(834, 433);
+            dataGridView1.TabIndex = 4;
+            dataGridView1.CellClick += dataGridView1_CellClick;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // MarketPlace_Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1014, 513);
+            Controls.Add(panelContent);
             Controls.Add(dataGridView1);
             Controls.Add(panel4);
             Controls.Add(panel2);
@@ -306,11 +316,12 @@
         private Button Inventory;
         private Button Suppliers;
         private Button Add_Product;
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn colName;
-        private DataGridViewTextBoxColumn colCategory;
-        private DataGridViewTextBoxColumn colPrice;
-        private DataGridViewTextBoxColumn colSold;
+        private Panel panelContent;
         private DataGridViewTextBoxColumn colStatus;
+        private DataGridViewTextBoxColumn colSold;
+        private DataGridViewTextBoxColumn colPrice;
+        private DataGridViewTextBoxColumn colCategory;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridView dataGridView1;
     }
 }
