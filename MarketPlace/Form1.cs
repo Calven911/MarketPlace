@@ -89,11 +89,13 @@ namespace MarketPlace
 
         private void MarketPlace_Dashboard_Load(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Add("Brake Lever Set", "Motor Parts", "PHP 999", "15 pcs", "⭐ 4.8 (120)");
-            dataGridView1.Rows.Add("Handlebar System", "Bike Parts", "PHP 599", "4 pcs", "⭐ 4.5 (45)");
-            dataGridView1.Rows.Add("Performance Steering Wheel", "Car Parts", "PHP 2,499", "8 pcs", "⭐ 5.0 (12)");
-            dataGridView1.Rows.Add("Alloy Wheel Car Rim", "Car Parts", "PHP 4,500", "12 pcs", "⭐ 4.9 (38)");
-            dataGridView1.Rows.Add("Crankset Chainring Kit", "Bike Parts", "PHP 850", "6 pcs", "⭐ 4.2 (20)");
+            dataGridView1.Rows.Clear();
+
+            dataGridView1.Rows.Add("Brake Lever Set", "Motor Parts", "PHP 999", "142 sold", " Active");
+            dataGridView1.Rows.Add("Handlebar System", "Bike Parts", "PHP 599", "65 sold", " Active");
+            dataGridView1.Rows.Add("Performance Steering Wheel", "Car Parts", "PHP 2,499", "12 sold", " Low Stock");
+            dataGridView1.Rows.Add("Alloy Wheel Car Rim", "Car Parts", "PHP 4,500", "0 sold", " Draft");
+            dataGridView1.Rows.Add("Crankset Chainring Kit", "Bike Parts", "PHP 850", "88 sold", " Out of Stock");
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

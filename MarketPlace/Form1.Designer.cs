@@ -45,8 +45,8 @@
             colName = new DataGridViewTextBoxColumn();
             colCategory = new DataGridViewTextBoxColumn();
             colPrice = new DataGridViewTextBoxColumn();
-            colStock = new DataGridViewTextBoxColumn();
-            Ratings = new DataGridViewTextBoxColumn();
+            colSold = new DataGridViewTextBoxColumn();
+            colStatus = new DataGridViewTextBoxColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -225,7 +225,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colName, colCategory, colPrice, colStock, Ratings });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colName, colCategory, colPrice, colSold, colStatus });
             dataGridView1.Location = new Point(165, 77);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
@@ -257,19 +257,19 @@
             colPrice.ReadOnly = true;
             colPrice.Resizable = DataGridViewTriState.False;
             // 
-            // colStock
+            // colSold
             // 
-            colStock.HeaderText = "Stock Qty";
-            colStock.Name = "colStock";
-            colStock.ReadOnly = true;
-            colStock.Resizable = DataGridViewTriState.False;
+            colSold.HeaderText = "Sold";
+            colSold.Name = "colSold";
+            colSold.ReadOnly = true;
+            colSold.Resizable = DataGridViewTriState.False;
             // 
-            // Ratings
+            // colStatus
             // 
-            Ratings.HeaderText = "Ratings";
-            Ratings.Name = "Ratings";
-            Ratings.ReadOnly = true;
-            Ratings.Resizable = DataGridViewTriState.False;
+            colStatus.HeaderText = "Status";
+            colStatus.Name = "colStatus";
+            colStatus.ReadOnly = true;
+            colStatus.Resizable = DataGridViewTriState.False;
             // 
             // MarketPlace_Dashboard
             // 
@@ -310,7 +310,7 @@
         private DataGridViewTextBoxColumn colName;
         private DataGridViewTextBoxColumn colCategory;
         private DataGridViewTextBoxColumn colPrice;
-        private DataGridViewTextBoxColumn colStock;
-        private DataGridViewTextBoxColumn Ratings;
+        private DataGridViewTextBoxColumn colSold;
+        private DataGridViewTextBoxColumn colStatus;
     }
 }
